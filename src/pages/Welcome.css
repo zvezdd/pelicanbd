@@ -1,4 +1,4 @@
-.welcome-container {
+/* .welcome-container {
     min-height: 100vh;
     background: #1a1a1a;
     display: flex;
@@ -117,4 +117,212 @@
     to {
       transform: scaleX(1);
     }
+  } */
+   /* Welcome.css */
+/* Welcome.css */
+/* Welcome.css */
+.welcome-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Базовые стили для анимации */
+.animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.welcome-title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3),
+               0 0 20px rgba(255, 255, 255, 0.2),
+               0 0 30px rgba(255, 255, 255, 0.1);
+  animation: glow 2s ease-in-out infinite alternate;
+  text-align: center;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3),
+                 0 0 20px rgba(255, 255, 255, 0.2),
+                 0 0 30px rgba(255, 255, 255, 0.1);
   }
+  to {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5),
+                 0 0 30px rgba(255, 255, 255, 0.3),
+                 0 0 40px rgba(255, 255, 255, 0.2);
+  }
+}
+
+.features-section {
+  max-width: 1000px;
+  width: 100%;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+.features-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-benefits, .product-features {
+  flex: 1;
+}
+
+.user-benefits h3, .product-features h3, .title {
+  color: #fff;
+  margin-bottom: 15px;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+.user-benefits ul, .product-features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.user-benefits li, .product-features li {
+  margin: 10px 0;
+  color: rgba(255, 255, 255, 0.8);
+  position: relative;
+  padding-left: 20px;
+  transition: all 0.5s ease;
+}
+
+.user-benefits li:before, .product-features li:before {
+  content: "•";
+  color: #fff;
+  position: absolute;
+  left: 0;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+.features-section.visible .user-benefits li,
+.features-section.visible .product-features li {
+  animation: slideIn 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.divider {
+  width: 2px;
+  height: 150px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+  transition: all 0.8s ease;
+}
+
+.features-section.visible .divider {
+  animation: grow 0.8s ease forwards;
+}
+
+@keyframes grow {
+  from { height: 0; }
+  to { height: 150px; }
+}
+
+.pricing-section {
+  max-width: 1000px;
+  width: 100%;
+}
+
+.pricing-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.pricing-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 12px;
+  width: 280px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.pricing-section.visible .pricing-card {
+  animation: cardFade 0.5s ease forwards;
+}
+
+@keyframes cardFade {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.pricing-card h3 {
+  color: #fff;
+  margin-bottom: 10px;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 10px 0;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+.pricing-card p {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 15px;
+}
+
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.pricing-card li {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 8px 0;
+}
+
+.login-btn {
+  padding: 12px 24px;
+  background: linear-gradient(90deg, #2a2a2a 0%, #3a3a3a 100%);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+.login-btn:hover {
+  background: linear-gradient(90deg, #3a3a3a 0%, #4a4a4a 100%);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
