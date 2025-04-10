@@ -1,0 +1,146 @@
+/* Общий стиль фона и контейнера главной страницы */
+.home {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    min-height: 50vh;
+    padding-top: 60px;
+  }
+  
+  /* Контейнер приветственного сектора */
+  .welcome-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  
+  /* Базовые стили анимации */
+  .animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+  }
+  
+  .animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Приветственное заглавие с анимацией "светящейся" тени */
+  .welcome-title {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3),
+                 0 0 20px rgba(255, 255, 255, 0.2),
+                 0 0 30px rgba(255, 255, 255, 0.1);
+    animation: glow 2s ease-in-out infinite alternate;
+    text-align: center;
+  }
+  
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.3),
+                   0 0 20px rgba(255, 255, 255, 0.2),
+                   0 0 30px rgba(255, 255, 255, 0.1);
+    }
+    to {
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.5),
+                   0 0 30px rgba(255, 255, 255, 0.3),
+                   0 0 40px rgba(255, 255, 255, 0.2);
+    }
+  }
+  
+  /* Общие стили секций с текстом */
+  .section-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Стили секций */
+  .chat-insert {
+    background-color: #2a2a2a;
+    padding: 40px;
+    text-align: center;
+    color: #fff;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .why-us,
+  .subscription-comparison,
+  .news-section,
+  .get-started {
+    background-color: #333;
+    padding: 40px;
+    text-align: center;
+    color: #fff;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Стили карточек прайсов */
+  .pricing-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .pricing-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 12px;
+    width: 280px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .pricing-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .pricing-card h3 {
+    color: #fff;
+    margin-bottom: 10px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+  }
+  
+  .pricing-card p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 15px;
+  }
+  
+  /* Стили кнопки (login-btn) */
+  .login-btn {
+    padding: 12px 24px;
+    background: linear-gradient(90deg, #2a2a2a 0%, #3a3a3a 100%);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+  }
+  
+  .login-btn:hover {
+    background: linear-gradient(90deg, #3a3a3a 0%, #4a4a4a 100%);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  }
+  
